@@ -9,8 +9,8 @@ Welcome to T1040RDB documentation
 :Date: 26 Aug 2016
 :Reference name: QorIQ T1040
 
-QorIQ T1040 Reference Design Board
-----------------------------------
+QorIQ® T1040 Reference Design Board
+-----------------------------------
 
 .. image:: _static/logo_silica_nxp.jpg
 
@@ -52,7 +52,7 @@ The T1040RDB board can help shorten your time to market. It can be used for soft
 Developement tools
 ******************
 
-NXP releases Linux software development kit (**SDK 1.7**) including support for QorIQ® T1040 ARM-based with Yocto system.
+NXP releases Linux® SDK for QorIQ® Processors including support for QorIQ® T1040 ARM-based with Yocto system.
 
 **Features**
 
@@ -69,7 +69,7 @@ NXP releases Linux software development kit (**SDK 1.7**) including support for 
 Document references
 *******************
 
-The board reference documentation is available on the `architech-board <http://architechboards.org>`_ website. 
+The board reference documentation is available on the `NXP website <http://www.nxp.com/products/microcontrollers-and-processors/power-architecture-processors/qoriq-processors-power-architecture-t-series/qoriq-t1040-reference-design-board:T1040RDB?fpsp=1&tab=Documentation_Tab>`_ website. 
 
 
 Contents:

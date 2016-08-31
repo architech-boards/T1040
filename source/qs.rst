@@ -6,9 +6,9 @@ Quick start guide
 -----------------
 
 This document will guide you from installing the **Linux® SDK 1.7 for QorIQ® Processors of NXP** on a Ubuntu **14.04** and build all the files necessary to run the board. It's a simple guide "ready to go" in order to be able to create your own Linux distribution from scratch reading this only page.
-The binaries generated will be installed in the NOR flash if the board. The Yocto Project is used in this SDK, this is an open source collaboration project that provides templates, tools and methods to help you create custom Linux-based systems for embedded boards products. At the end of the next steps you will have a linux system ready to boot on your board **T1040RDB**.
+The binaries generated will be installed in the NOR flash of the board. The Yocto Project is used in this SDK, this is an open source collaboration project that provides templates, tools and methods to help you create custom Linux-based systems for embedded boards products. At the end of the next steps you will have a linux system ready to boot on your board **T1040RDB**.
 
-The first step to do is preparing on the host machine a linux operating system. In this guide we have used a virtual machine in order to develop on the SDK. So the first step is installing a virtual machine with Ubuntu 14.04 32bit.
+The first step to do is preparing on the host machine a linux operating system. In this guide we have used a virtual machine in order to develop on the SDK. So the first step is installing a virtual machine with **Ubuntu 14.04 32bit**.
 
 Download VirtualBox
 ===================
@@ -51,7 +51,7 @@ Select VirtualBox Disk Image:
 
 .. image:: _static/vbox_vdi.jpg
 
-Click on dynamic allocation, this permit to save space inutilizated
+Click on dynamic allocation, this permit to save space unused
 
 .. image:: _static/vbox_dynamic_allocated.jpg
 
@@ -59,8 +59,7 @@ Choose a big size for the hard disk because Yocto uses a lot of space during the
 
 .. image:: _static/vbox_size_hd.jpg
 
-After this steps the Virtual Machine will be created and you have to open the settings window in order to set other essential options.
-To increase the performances of your virtual machine, you can configure the system settings. First, select the **T1040-SDK** virtual machine from the list of virtual machines, click on the  **Settings** icon in the **Oracle VM VirtualBox Manager** window:
+After this steps the Virtual Machine will be created and you have to open the settings window in order to increase the performances of your virtual machine. First, select the **T1040-SDK** virtual machine from the list of virtual machines, click on the  **Settings** icon in the **Oracle VM VirtualBox Manager** window:
 
 .. image:: _static/vbox_settings_button.jpg
 
@@ -68,15 +67,15 @@ Select *Processor* tab to select how many processor **cores** you want to assign
 
 .. image:: _static/vbox_ncpu.jpg
 
-Click on **Shared Folders** and select a folder to share with your host operating system. Make sure that **Auto-mount** checkbox is checked.
+Click on **Shared Folders** and select a folder to share with your host operating system. Make sure that **Auto-mount** check-box is checked.
 
 .. image:: _static/vbox_shared_folder.jpg
 
 Install Ubuntu 14.04 32bit
 ==========================
 
-Download the iso from `Ubuntu website <http://releases.ubuntu.com/14.04/ubuntu-14.04.5-desktop-i386.iso>`_.
-After the download, in the settings select **Storage** then click on the cd icon named **Empty**, click on the cd icon on the right and choose the Ubuntu iso image **ubuntu-14.04.5-desktop-i386.iso** via **Choose a virtual optical disk file** option.
+Download the ISO from `Ubuntu website <http://releases.ubuntu.com/14.04/ubuntu-14.04.5-desktop-i386.iso>`_.
+After the download, in the settings select **Storage** then click on the CD icon named **Empty**, click on the CD icon on the right and choose the Ubuntu iso image **ubuntu-14.04.5-desktop-i386.iso** via **Choose a virtual optical disk file** option.
 
 .. image:: _static/vbox_livedvd.jpg
 
@@ -106,7 +105,7 @@ Continue the installation confirming your chose and set your time zone. After th
 .. image:: _static/vbox_ubuntu_user.jpg
 
 Press continue and wait the end of the installation. 
-Remember to remove the virtual cd, you have to open the setting window of the T1040-SDK machine and remove the storage from the dvd icon marked in red.
+Remember to remove the virtual CD, you have to open the setting window of the T1040-SDK machine and **remove the storage from the CD** icon marked in red.
 
 .. image:: _static/vbox_livedvd.jpg
 
@@ -118,7 +117,7 @@ If a window will appear asking to upgrade Ubuntu, select **Don't Upgrade**.
 
 .. image:: _static/vbox_upgrade.jpg
 
-Before starting the installation of the SDK it is better install the Guest Addition, click on **Devices** -> **Insert Guest Additions CD image...**
+Before to start the installation of the SDK it is better install the Guest Addition, click on **Devices** -> **Insert Guest Additions CD image...**
 
 .. image:: _static/vbox_addons.jpg
 
@@ -143,9 +142,9 @@ Then you have to click on **previous** tab and on **QorIQ Linux SDK v1.7** link.
 
 .. image:: _static/downloading_sdk1.7.jpg
 
-There will be shown you a list of images, you have to download the file **Source: QorIQ Linux SDK V1.7 Yocto Source ISO**, size 3.1GB. The other links are pregenerated binary files, these are useless for us because we will build the linux distribution by ourself.
+There will be shown you a list of images, you have to download the file **Source: QorIQ Linux SDK V1.7 Yocto Source ISO**, size 3.1GB. The other links are  binary files, these are useless for us because we will build the Linux distribution by ourself.
 
-Once the download is complete import the image file into the virtual machine.
+If you have downloaded the ISO file without the Virtual Machine then use the shared folder created previously in order to import the file.
 
 Installation
 ============
@@ -187,7 +186,7 @@ add the following line in the User Privilege section:
 
 The option **-j 4** is used to tell Bitbake how many tasks can be executed at the same time. These are related to the number of processors of your (virtual) machine, and should be set with a number that is two times the number of processors on your (virtual) machine. If for example, your (virtual) machine has/sees 2 cores, then you should set those variables with the number **4**.
 
-Now you have the Yocto installed and ready to build a Linux distribution. Everytime you will want build a linux distribution using Yocto you will have to open a terminal and enter the following commands:
+Now you have the Yocto installed and ready to build a Linux distribution. Every time you will want build a Linux distribution using Yocto you will have to open a terminal and enter the following commands:
 
 ::
 
@@ -195,7 +194,7 @@ Now you have the Yocto installed and ready to build a Linux distribution. Everyt
  source ./SOURCE_THIS
 
 In this way you will have the build environment ready.
-Remember to unmount the image with the command:
+Finally Remember to unmount the image with the command:
 
 ::
 
@@ -204,25 +203,23 @@ Remember to unmount the image with the command:
 Build Linux Distribution
 ========================
 
-Supposing you are using a termianl and you are in the *~/QorIQ-SDK-V1.7-20141218-yocto/build_t1040rdb-64b_release/* directory with the Yocto environment ready to build, you can choose which Linux distribution you want compile. The possibility are:
+Supposing you are using a terminal and you are in the *~/QorIQ-SDK-V1.7-20141218-yocto/build_t1040rdb-64b_release/* directory with the Yocto environment ready to build, you can choose which Linux distribution you want compile. The possibility are:
 
-::
-
- fsl-image-minimal: contains basic packages to boot up a board
- fsl-image-core: contains common open source packages and FSL specific packages.
- fsl-image-full: contains all packages in the full package list.
- fsl-image-flash: contains all the user space apps needed to deploy the fsl-image-full image to a USB stick, hard drive, or other large physical media.
- fsl-image-virt: contains toolkit to interact with the virtualization capabilities of Linux
- fsl-image-x11: freescale image with a very basic X11 image with a terminal
+- **fsl-image-minimal**: contains basic packages to boot up a board
+- **fsl-image-core**: contains common open source packages and FSL specific packages.
+- **fsl-image-full**: contains all packages in the full package list.
+- **fsl-image-flash**: contains all the user space apps needed to deploy the fsl-image-full image to a USB stick, hard drive, or other large physical media.
+- **fsl-image-virt**: contains toolkit to interact with the virtualization capabilities of Linux
+- **fsl-image-x11**: freescale image with a very basic X11 image with a terminal
 
 In our guide we have built the **fsl-image-minimal**. This distribution is very minimal and it is used just to have a system running with essential services. It does not contain Freescale special SDK packages such as USDPAA, etc.
-So running the next command Yocto will start to download from internet and compile all the packages necessary to create the distribution. For this reason it is mandatory have a internet connection avaiable or the building will fail.
+So running the next command Yocto will start to download from internet and compile all the packages necessary to create the distribution. For this reason it is mandatory have a internet connection available or the building will fail.
 
 ::
 
  bitbake fsl-image-minimal
 
-This task will require a lot of time, few hours. If there will be problems, the first thing to check is the internet connection and the space avaiable on the virtual machine.
+This task will require a lot of time, few hours. If there will be problems, the first thing is to check the internet connection and the space available on the virtual machine.
 
 Flashing the Linux Distribution
 ===============================
@@ -240,7 +237,7 @@ In this directory these files corrispond to:
 - the **Device Tree** named **uImage-t1040rdb.dtb**
 - the **root file system** named **fsl-image-minimal-t1040rdb-64b**
 
-Now we have to upload these files into the NOR flash. The easy way to do this is run the bootloader **u-boot** preinstalled on the T1040RDB and using a TFTP server on the host machine permitting to the u-boot to download the files and upload them into the NOR flash.
+Now we have to upload these files into the NOR flash. The easy way to do this is running the bootloader **u-boot** pre-installed on the T1040RDB and using a TFTP server on the host machine permitting to the u-boot to download the files and upload them into the NOR flash.
 
 Installing the TFTP server
 ==========================
@@ -251,7 +248,7 @@ In the virtual machine install following packages:
 
  sudo apt-get install xinetd tftpd tftp
 
-Create /etc/xinetd.d/tftp
+Create /etc/xinetd.d/tftp file
 
 ::
 
@@ -327,7 +324,7 @@ Reading from the official SDK guide, the NOR flash on the board can be seen as t
 
 To protect the default U-Boot in bank 0, it is a convention employed by Freescale to deploy work images into the alternate bank, and then switch to the alternate bank for testing. Switching to the alternate bank can be done in software and effectively swaps the first bank with the second bank, thereby putting the alternate bank in the bank 0 address range until further configuration or until a reset occurs. This protects banks 0 and keeps the board bootable under all circumstances.
 
-So we will boot the system from the bank 0 but we will write our files into the bank 4. In this way if something goes wrong we have the bank 0 with a bootable system. The area of the flash memory where we put our compiled file are the following:
+So we will boot the system from the bank 0 but we will write our files into the **bank 4**. In this way if something goes wrong we have the bank 0 with a bootable system. The area of the flash memory where we put our compiled file are the following:
 
 +-------------+------------+---------------------------------------+---------------+
 | Range Start | Range End  | Definition                            | Size          |
@@ -390,7 +387,7 @@ with the proper device.
 
 Once you are done configuring the serial port, you are back to *minicom* main menu and you can select *exit*.
 
-2. Power on the board and press *enter* key in order to enter in the command line of the u-boot.
+2. Power on the board and press a key in order to enter in the command line of the u-boot.
 
 ::
 
@@ -423,7 +420,7 @@ Once you are done configuring the serial port, you are back to *minicom* main me
 
 .. image:: _static/eth0.jpg
 
-Check ethernet connection, by default the u-boots sets its IP to 192.168.2.105 and the server 192.168.2.1. Try to ping from the board to the PC:
+Check ethernet connection, by default the u-boots sets its IP to **192.168.2.105** and the server **192.168.2.1**. Try to ping from the board to the PC:
 
 ::
 
@@ -496,13 +493,12 @@ In this case (r1.0, 106.4.14) the commands will be:
 
 Then we will upload the file necessary and set a boot variable:
 
-setenv bootargs "root=/dev/ram rw console=ttyS0,115200 ramdisk_size=700000"
-
 ::
 
- tftp 0x1000000 uImage-t1040rdb-64b.bin
- tftp 0x2000000 fsl-image-minimal-t1040rdb-64b.ext2.gz.u-boot
- tftp 0x3000000 uImage-t1040rdb.dtb
+  setenv bootargs "root=/dev/ram rw console=ttyS0,115200 ramdisk_size=700000"
+  tftp 0x1000000 uImage-t1040rdb-64b.bin
+  tftp 0x2000000 fsl-image-minimal-t1040rdb-64b.ext2.gz.u-boot
+  tftp 0x3000000 uImage-t1040rdb.dtb
 
 As you can see the correct roof file system is with the postfix **.ext2.gz.u-boot**. With the next command you will launch the Linux Operating System:
 
@@ -580,7 +576,7 @@ The booting process finish with the login **t1040rdb login:**. Enter **root** as
 Boot directly with Bank 4
 =========================
 
-If you want run directly the u-boot from the bank 4 then you have to change the switch on the T1040RDB. This is the configuration:
+If you want run directly the u-boot from the bank 4 when you turn-on the T1040RDB then you have to change its switch. This is the configuration:
 
 SW3 pin 5 -> OFF, with this set the boot starts from Bank **4**.
 
@@ -598,7 +594,11 @@ Default switches:
 
 .. image:: _static/switches.jpg
 
-Changing the SW3 pin 5 at the boot will be showd this screen:
+Changing the **SW3 pin 5**:
+
+.. image:: _static/switch_boot_vbank4.jpg
+
+At the boot will be showd this screen:
 
 ::
 
