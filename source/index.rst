@@ -1,7 +1,7 @@
 .. T1040 documentation master file
 
-Welcome to T1040RDB documentation!
-==================================
+Welcome to T1040RDB documentation
+=================================
 
 
 :Version: 1.00A
