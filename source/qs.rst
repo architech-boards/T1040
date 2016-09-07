@@ -166,7 +166,7 @@ Following these steps you will install the SDK in short time:
 
 ::
 
-  sudo visudo /etc/sudoers
+  sudo visudo
 
 add the following line in the User Privilege section:
 
@@ -174,12 +174,17 @@ add the following line in the User Privilege section:
 
   architech ALL = NOPASSWD: /usr/bin/apt-get
 
-3. Install the SDK using all the deault options. This procedure will require some hours:
+3. Install the SDK using all the deault options
 
 ::
 
  cd iso
  ./install
+ 
+ Accept the terms pressing **q** key and confirming writing **yes**, then press **enter** key. Installation path in this example is **/home/architech/**. This procedure will require some hours.
+
+::
+ 
  cd ~/QorIQ-SDK-V1.7-20141218-yocto
  ./poky/scripts/host-prepare.sh
  source ./poky/fsl-setup-poky -m t1040rdb-64b -j 4
