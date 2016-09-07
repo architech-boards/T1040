@@ -168,7 +168,7 @@ Following these steps you will install the SDK in short time:
 
   sudo visudo
 
-add the following line in the User Privilege section:
+add the following line in the **User Privilege** section:
 
 ::
 
@@ -178,16 +178,16 @@ add the following line in the User Privilege section:
 
 ::
 
- cd iso
- ./install
+  cd iso
+  ./install
  
- Accept the terms pressing **q** key and confirming writing **yes**, then press **enter** key. Installation path in this example is **/home/architech/**. This procedure will require some hours.
+Accept the terms pressing **q** key and confirming writing **yes**, then press **enter** key. Installation path in this example is **/home/architech/**. This procedure will require some hours.
 
 ::
  
- cd ~/QorIQ-SDK-V1.7-20141218-yocto
- ./poky/scripts/host-prepare.sh
- source ./poky/fsl-setup-poky -m t1040rdb-64b -j 4
+  cd ~/QorIQ-SDK-V1.7-20141218-yocto
+  ./poky/scripts/host-prepare.sh
+  source ./poky/fsl-setup-poky -m t1040rdb-64b -j 4
 
 The option **-j 4** is used to tell Bitbake how many tasks can be executed at the same time. These are related to the number of processors of your (virtual) machine, and should be set with a number that is two times the number of processors on your (virtual) machine. If for example, your (virtual) machine has/sees 2 cores, then you should set those variables with the number **4**.
 
