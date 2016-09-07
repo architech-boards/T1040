@@ -198,7 +198,7 @@ Finally Remember to unmount the image with the command:
 
 ::
 
-  umount <PATH_TO_THE_ISO>/iso
+  sudo umount <PATH_TO_THE_ISO>/iso
 
 Build Linux Distribution
 ========================
