@@ -275,7 +275,7 @@ and put this entry:
  disable         = no
  }
 
-and change the properties of the **t1040rdb-64b** directory.
+and change the properties of the **t1040rdb-64b** directory. **<ENTER YOUR HOME NAME>** in our example is **architech**.
 
 ::
 
