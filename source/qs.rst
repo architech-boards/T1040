@@ -430,7 +430,7 @@ Check ethernet connection, by default the u-boots sets its IP to **192.168.2.105
 
  => ping 192.168.2.1
  Using FM1@DTSEC4 device
- host 192.168.2.1 **is alive**
+ host 192.168.2.1 is alive
 
 If all is ok the response will be **is alive** otherwise try to check the firewall on your PC.
 
