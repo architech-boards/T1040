@@ -279,7 +279,6 @@ and change the properties of the **t1040rdb-64b** directory.
 
 ::
 
- sudo mkdir /home/<ENTER YOUR HOME NAME>/QorIQ-SDK-V1.7-20141218-yocto/build_t1040rdb-64b_release/tmp/deploy/images/t1040rdb-64b
  sudo chmod -R 777 /home/<ENTER YOUR HOME NAME>/QorIQ-SDK-V1.7-20141218-yocto/build_t1040rdb-64b_release/tmp/deploy/images/t1040rdb-64b
  sudo chown -R nobody /home/<ENTER YOUR HOME NAME>/QorIQ-SDK-V1.7-20141218-yocto/build_t1040rdb-64b_release/tmp/deploy/images/t1040rdb-64b
 
