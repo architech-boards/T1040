@@ -391,7 +391,7 @@ with the proper device.
 
 Once you are done configuring the serial port, you are back to *minicom* main menu and you can select *exit*.
 
-2. Power on the board and press a key in order to enter in the command line of the u-boot.
+2. Power on the board and press a key in order to enter in the command line of the u-boot before the countdown goes to zero.
 
 ::
 
