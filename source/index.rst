@@ -78,5 +78,6 @@ Contents:
    :maxdepth: 2
 
    qs
+   uboot
 
 
